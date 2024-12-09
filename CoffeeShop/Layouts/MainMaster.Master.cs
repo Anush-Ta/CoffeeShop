@@ -18,6 +18,12 @@ namespace CoffeeShop.Layouts
                 Classes.Customer customer = xt.Customers.Where(u => u.Id == CustomerId).FirstOrDefault();
                 lblCustomerName.Text = customer.Person.Name + " " + customer.Person.Family;
             }
+            if (Session["AdminId"] != null)
+            {
+                var AdminId = Int32.Parse(Session["AdminId"].ToString());
+                Classes.Admin admin = xt.Admins.Where(u => u.Id == AdminId).FirstOrDefault();
+                lblCustomerName.Text = admin.Person.Name + " " + admin.Person.Family;
+            }
         }
     }
 }
