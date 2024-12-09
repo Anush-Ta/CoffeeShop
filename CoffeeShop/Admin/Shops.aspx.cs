@@ -15,6 +15,9 @@ namespace CoffeeShop.Admin
         {
             if (!IsPostBack)
             {
+                BtnInsert.Visible = true;
+                BtnUpdate.Visible = false;
+                BtnDelete.Visible = false;
                 if (Request["act"] != null && Request["act"] == "Show" && Request["ShopId"] != null)
                 {
                     int ShopId = Int32.Parse(Request["ShopId"]);
@@ -27,7 +30,11 @@ namespace CoffeeShop.Admin
                     txtPhone2.Text = Shop.Phone2;
                     txtMobile.Text = Shop.Mobile;
                     txtAbout.Text = Shop.About;
+                    BtnInsert.Visible = false;
+                    BtnUpdate.Visible = true;
+                    BtnDelete.Visible = true;
                 }
+
                 FillGrid();
             }
         }
@@ -58,15 +65,15 @@ namespace CoffeeShop.Admin
                 <td>{5}</td>
                 <td>{6}</td>
                 <td><image src='{7}'></td>
-                <td><a href='Person.aspx?act=Show&ShopId={8}' class='btn btn-success btn-xs'>نمایش</a></td>",
+                <td><a href='Shops.aspx?act=Show&ShopId={8}' class='btn btn-success btn-xs'>نمایش</a></td>",
                 (i + 1).ToString(),
                 ShowShop[i].Name,
                 ShowShop[i].Address,
                 ShowShop[i].Phone1,
                 ShowShop[i].Phone2,
                 ShowShop[i].Mobile,
-                ImageUrl,
                 ShowShop[i].About,
+                ImageUrl,
                 ShowShop[i].Id);
             }
 
@@ -74,8 +81,8 @@ namespace CoffeeShop.Admin
 
         protected void BtnInsert_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtAddress.Text) && string.IsNullOrEmpty(txtPhone1.Text)
-                && string.IsNullOrEmpty(txtPhone1.Text) && string.IsNullOrEmpty(txtAbout.Text))
+            if (txtName.Text.Length > 0 && txtAddress.Text.Length > 0 && txtPhone1.Text.Length > 0
+                && txtPhone2.Text.Length > 0 && txtAbout.Text.Length > 0)
             {
                 bool CheckShop = false;
                 Classes.Shop[] VerifyShop = xt.Shops.Where(u => u.Name == txtName.Text || u.Phone1 == txtPhone1.Text
@@ -118,16 +125,16 @@ namespace CoffeeShop.Admin
 
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtAddress.Text) && string.IsNullOrEmpty(txtPhone1.Text)
-                && string.IsNullOrEmpty(txtPhone1.Text) && string.IsNullOrEmpty(txtAbout.Text))
+            if (txtName.Text.Length > 0 && txtAddress.Text.Length > 0 && txtPhone1.Text.Length > 0
+                && txtPhone2.Text.Length > 0)
             {
-                if (string.IsNullOrEmpty(txtId.Text))
+                if (txtId.Text.Length > 0)
                 {
                     Classes.Shop UpdateShop = xt.Shops.Where(u => u.Id == Int32.Parse(txtId.Text)).SingleOrDefault();
 
                     if (UpdateShop != null)
                     {
-                        Classes.Shop[] CheckShopUniqe = xt.Shops.Where(u => u.Id != Int32.Parse(txtId.Text) && 
+                        Classes.Shop[] CheckShopUniqe = xt.Shops.Where(u => u.Id != Int32.Parse(txtId.Text) &&
                         (u.Phone1 == txtPhone1.Text || u.Mobile == txtMobile.Text || u.Phone2 == txtPhone2.Text)).ToArray();
 
                         if (CheckShopUniqe.Length == 0)

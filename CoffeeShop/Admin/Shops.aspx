@@ -21,8 +21,7 @@
                 <div class="form-group">
                     <label for="img1" class="col-sm-4 control-label">انتخاب عکس</label>
                     <div class=" col-sm-8">
-                        <label for="ContentPlaceHolder1_FilePicture" class="btn btn-warning btn-sm">انتخاب عکس</label>
-                        <asp:FileUpload ID="filePicture" runat="server" Style="display: none;" class="form-control" accept=".png,.jpg,.jpeg,.gif" />
+                        <asp:FileUpload ID="filePicture" runat="server"  class="form-control" accept=".png,.jpg,.jpeg,.gif" />
                     </div>
                     <div class=" col-sm-3"></div>
                     <div class="form-group col-md-3 ">
@@ -46,8 +45,8 @@
                             <th>شماره تلفن1</th>
                             <th>شماره تلفن2</th>
                             <th>موبایل</th>
-                            <th>عکس</th>
                             <th>درباره</th>
+                            <th>عکس</th>
                             <th>عملیات</th>
                         </tr>
                     </thead>
