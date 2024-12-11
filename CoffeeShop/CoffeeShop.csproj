@@ -9192,6 +9192,8 @@
     <Content Include="Layouts\pages\widgets_social.html" />
     <Content Include="Layouts\pages\widgets_statistic.html" />
     <Content Include="Layouts\pages\widgets_weather.html" />
+    <Content Include="Personel\Dashboard.aspx" />
+    <Content Include="Personel\LogIn.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -9287,6 +9289,20 @@
     </Compile>
     <Compile Include="Layouts\MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personel\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personel\LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -10414,6 +10430,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\vendor_components\flat-color-icons\PNG\512\A\" />
+    <Folder Include="Picturs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

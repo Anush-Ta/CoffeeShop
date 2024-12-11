@@ -13,6 +13,10 @@ namespace CoffeeShop.Admin
         Classes.XCoffeeShopDataContext xt = new Classes.XCoffeeShopDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["AdminId"] == null)
+            {
+                Response.Redirect("LogIn.aspx");
+            }
             if (!IsPostBack)
             {
                 BtnInsert.Visible = true;
@@ -203,6 +207,11 @@ namespace CoffeeShop.Admin
             {
                 ltrMassgae.Text = Classes.AlarmSetting.Alertdynamic("لطفا تمامی فیلدها را پر کنید!", "خطا", "danger");
             }
+        }
+
+        protected void btnOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Shops.aspx");
         }
     }
 }

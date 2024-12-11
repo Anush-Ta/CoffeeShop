@@ -16,13 +16,19 @@ namespace CoffeeShop.Layouts
             {
                 var CustomerId = Int32.Parse(Session["CustomerId"].ToString());
                 Classes.Customer customer = xt.Customers.Where(u => u.Id == CustomerId).FirstOrDefault();
-                lblCustomerName.Text = customer.Person.Name + " " + customer.Person.Family;
+                lblShowName.Text = customer.Person.Name + " " + customer.Person.Family;
             }
             if (Session["AdminId"] != null)
             {
                 var AdminId = Int32.Parse(Session["AdminId"].ToString());
                 Classes.Admin admin = xt.Admins.Where(u => u.Id == AdminId).FirstOrDefault();
-                lblCustomerName.Text = admin.Person.Name + " " + admin.Person.Family;
+                lblShowName.Text = admin.Person.Name + " " + admin.Person.Family;
+            }
+            if (Session["PersonelId"] != null)
+            {
+                var PersonelId = Int32.Parse(Session["PersonelId"].ToString());
+                Classes.Personel personel = xt.Personels.Where(u => u.Id ==  PersonelId).FirstOrDefault();
+                lblShowName.Text = personel.Person.Name + " " + personel.Person.Family;
             }
         }
     }

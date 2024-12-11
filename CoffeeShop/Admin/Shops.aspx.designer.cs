@@ -141,6 +141,15 @@ namespace CoffeeShop.Admin
         protected global::System.Web.UI.WebControls.Button BtnDelete;
 
         /// <summary>
+        /// btnOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOut;
+
+        /// <summary>
         /// LtrShow control.
         /// </summary>
         /// <remarks>

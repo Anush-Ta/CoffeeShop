@@ -32,8 +32,9 @@
                 <asp:TextBox class="form-control my-colorpicker1 colorpicker-element" type="text" ID="txtAbout" runat="server"></asp:TextBox><br />
                 <asp:TextBox ID="txtId" runat="server" hidden></asp:TextBox><br />
                 <asp:Button class="btn btn-cyan mb-5" type="submit" ID="BtnInsert" OnClick="BtnInsert_Click" runat="server" Text="افزودن" />
-                <asp:Button class="btn btn-warning mb-5" type="submit" ID="BtnUpdate" OnClick="BtnUpdate_Click" runat="server" Text="تغییر" />
+                <asp:Button class="btn btn-warning mb-5" type="submit" ID="BtnUpdate" OnClick="BtnUpdate_Click" runat="server" Text="ویرایش" />
                 <asp:Button class="btn btn-pink mb-5" type="submit" ID="BtnDelete" OnClick="BtnDelete_Click" runat="server" Text="حذف" />
+                <asp:Button class="btn btn-danger mb-5" ID="btnOut" OnClick="btnOut_Click" runat="server" Text="انصراف" />
             </div>
             <div class="col-8">
                 <table class="table table-striped table-advance table-hover">
